@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "private": false,
   "scripts": {
+    "postinstall": "npx next-ws-cli@latest patch",
     "dev": "next dev --turbopack",
     "build": "next-ws build && next build --turbopack",
     "start": "next start"
