@@ -8,8 +8,8 @@ const Monitoring = ({ srvs }: { srvs: ServerInfo[] }) => {
 
   useEffect(() => {
     const wsUrl =
-      process.env.NEXT_PUBLIC_WS_URL ?? "wss://storexmonitor.onrender.com/ws";
-    const ws = new WebSocket(`${wsUrl}`);
+      process.env.NEXT_PUBLIC_WS_URL ?? "wss://storexmonitor.onrender.com/";
+    const ws = new WebSocket(`${wsUrl}api/ws`);
     ws.onopen = () => {
       console.log("Connected to WebSocket");
     };
