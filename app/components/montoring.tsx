@@ -7,7 +7,9 @@ const Monitoring = ({ srvs }: { srvs: ServerInfo[] }) => {
   const [servers, setServers] = useState<ServerInfo[]>(srvs);
 
   useEffect(() => {
-    const ws = new WebSocket(`${process.env.NEXT_PUBLIC_WS_URL}`);
+    const wsUrl =
+      process.env.NEXT_PUBLIC_WS_URL ?? "wss://storexmonitor.onrender.com/ws";
+    const ws = new WebSocket(`${wsUrl}`);
     ws.onopen = () => {
       console.log("Connected to WebSocket");
     };
