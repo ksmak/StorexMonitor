@@ -3,9 +3,8 @@
   "version": "0.1.0",
   "private": false,
   "scripts": {
-    "prepare": "next-ws build",
     "dev": "next dev --turbopack",
-    "build": "next build --turbopack",
+    "build": "next-ws build && next build --turbopack",
     "start": "next start"
   },
   "dependencies": {
