@@ -1,11 +1,14 @@
-import HelloComponent from "@/app/components/hellocomponent";
-import SocketComponent from "@/app/components/hellocomponent";
+import Monitoring from "./components/montoring";
 
-export default function Home() {
+export default async function Page() {
+  const baseUrl = process.env.NEXT_PUBLIC_SITE_URL;
+  const servers = await fetch(`${baseUrl}/api/ws`).then((res) =>
+    res.json()
+  );
+
   return (
     <div>
-      <h1>Welcome to the Home Page</h1>
-      <HelloComponent />
+      <Monitoring srvs={servers} />
     </div>
   );
 }
